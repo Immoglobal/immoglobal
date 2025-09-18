@@ -1,11 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>ImmoGlobal</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImmoGlobal — Plataforma global de imobiliário</title>
+  <meta name="description" content="ImmoGlobal — marketplace global para compra, venda e arrendamento de imóveis. Web3-ready.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f17;         /* fundo escuro elegante */
+      --card:#121826;       /* cartões */
+      --acc:#6ee7b7;        /* destaque verde-menta */
+      --acc-2:#60a5fa;      /* azul suave */
+      --text:#e5e7eb;       /* texto principal */
+      --muted:#94a3b8;      /* texto secundário */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, #1f2a44 0%, transparent 60%) , var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1024px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      background: linear-gradient(135deg, var(--acc), var(--acc-2));
+      box-shadow:0 10px 30px rgba(96,165,250,.35);
+    }
+    .name{font-weight:800; letter-spacing:.2px}
+    .chip{
+      font-size:12px; padding:6px 10px; border-radius:999px; color:#0b1220; background:var(--acc);
+      font-weight:700;
+    }
+    main{display:grid; grid-template-columns:1.1fr 0.9fr; gap:32px; align-items:center; padding:48px 0}
+    @media (max-width:900px){ main{grid-template-columns:1fr; text-align:center} .cta{justify-content:center} }
+    h1{font-size:clamp(28px, 6vw, 54px); line-height:1.06; margin:0 0 16px}
+    p.lead{color:var(--muted); font-size:clamp(16px,2.2vw,20px); margin:0 0 28px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(148,163,184,.15);
+      border-radius:18px; padding:20px; backdrop-filter: blur(6px);
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700; transition:.2s transform ease, .2s opacity ease;
+      border:1px solid rgba(148,163,184,.25);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--acc), var(--acc-2));
+      color:#0b1220; border-color:transparent;
+      box-shadow:0 10px 30px rgba(110,231,183,.25);
+    }
+    ul.highlights{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:0; padding:0; list-style:none}
+    @media (max-width:640px){ ul.highlights{grid-template-columns:1fr} }
+    .hi{display:flex; gap:10px; align-items:flex-start; color:var(--muted)}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--acc-2); margin-top:7px}
+    footer{padding:30px 0; color:var(--muted); font-size:14px; border-top:1px solid rgba(148,163,184,.15)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:#cbd5e1}
+  </style>
 </head>
 <body>
-  <h1>ImmoGlobal</h1>
-  <p>Plataforma global de imobiliário em construção 🚀</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="name">ImmoGlobal</div>
+          <div class="mono">Global Real Estate Platform</div>
+        </div>
+      </div>
+      <span class="chip">Em breve</span>
+    </header>
+
+    <main>
+      <section>
+        <h1>Imobiliário sem fronteiras.</h1>
+        <p class="lead">
+          Marketplace global para <strong>compra, venda e arrendamento</strong> de imóveis,
+          com verificação de dados, pagamentos seguros e tecnologia Web3 opcional.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:contact@immoglobal.com?subject=Quero%20saber%20mais">Quero ser avisado</a>
+          <a class="btn" href="#sobre">Saiba mais</a>
+        </div>
+      </section>
+
+      <aside class="card" aria-label="Destaques">
+        <ul class="highlights">
+          <li class="hi"><span class="dot"></span> Publicação de imóveis fácil e multilíngue.</li>
+          <li class="hi"><span class="dot"></span> Matching inteligente entre comprador e imóvel.</li>
+          <li class="hi"><span class="dot"></span> Ferramentas para agentes e proprietários.</li>
+          <li class="hi"><span class="dot"></span> Integração futura com <span class="mono">Web3</span> (provas, depósitos, KYC).</li>
+        </ul>
+      </aside>
+    </main>
+
+    <section id="sobre" class="card" style="margin: 12px 0 24px;">
+      <h2 style="margin:0 0 8px">Sobre o projeto</h2>
+      <p style="color:var(--muted); margin:0">
+        Esta é uma prévia. Em breve abrimos o registo para proprietários e agentes. 
+        Se queres participar no piloto, escreve para <a href="mailto:contact@immoglobal.com">contact@immoglobal.com</a>.
+      </p>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> ImmoGlobal — Todos os direitos reservados.</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
